@@ -42,12 +42,13 @@ TEMPLATES = [
     },
 ]
 
-DEBUG = True
+DEBUG = False
 
-STATIC_URL = 'static/'
+import os
 
-ALLOWED_HOSTS = []
-
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+ALLOWED_HOSTS = ['*']
 
 ROOT_URLCONF = 'ngo_cms.urls'
 
@@ -69,4 +70,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
